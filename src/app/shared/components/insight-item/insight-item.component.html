@@ -1,0 +1,12 @@
+<div class="mx-3 mb-4">
+  <div class="item">
+    <img [alt]="insight?.title + ' cover'" [src]="baseUrl+insight?.cover?.url"/>
+    <!--  <img class="white-bg" src="assets/images/bg_gradient_white.svg"/>-->
+    <div class="item-content">
+      <div class="bottom">
+        <a [routerLink]="['/insights', insight?.id]"><h4>{{ insight?.title }}</h4></a>
+        <p>{{ insight?.subTitle }}</p>
+      </div>
+    </div>
+  </div>
+</div>

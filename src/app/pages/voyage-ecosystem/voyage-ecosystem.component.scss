@@ -1,0 +1,115 @@
+@import "src/vars";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+.ecosystem-title {
+  font-family: 'Ambit', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: $blue1;
+}
+
+.ecosystem-description {
+  font-family: 'Ambit', sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 16px;
+}
+
+.startup-mindset-container {
+  margin-top: -150px;
+}
+
+.ecosystem-card:hover {
+  cursor: pointer;
+}
+
+.ecosystem-card {
+  border-radius: 20px;
+  overflow: hidden;
+  @include media-breakpoint-up(lg) {
+    margin: 0 70px;
+  }
+  box-shadow: 10px 10px 71px 24px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 10px 10px 71px 24px rgba(0,0,0,0.1);
+  -moz-box-shadow: 10px 10px 71px 24px rgba(0,0,0,0.1);
+}
+
+.ecosystem-item {
+  padding: 0 20px;
+  @include media-breakpoint-up(lg) {
+    padding: 0 200px;
+  }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+
+  h2.step-title {
+    color: $blue1;
+    font-size: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  p.subtitle {
+    color: #A0AAB8;
+    font-size: 20px;
+    font-weight: lighter;
+    text-transform: capitalize;
+  }
+
+}
+
+.ecosystem-item:nth-child(4n+1) {
+  background-color: #FCFCFC;
+  background-repeat: no-repeat;
+  background-size: auto 90%;
+  @include media-breakpoint-up(lg) {
+    background-image: url("~src/assets/images/ic_voyage_1.svg");
+    background-position: bottom left;
+  }
+  height: 340px;
+  padding-top: 40px;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.ecosystem-item:nth-child(4n+2) {
+  background-color: #F9F9F9;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  @include media-breakpoint-up(lg) {
+    background-image: url("~src/assets/images/ic_voyage_2.svg");
+    background-position: 35% center;
+  }
+  height: 300px;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.ecosystem-item:nth-child(4n+3) {
+  background-color: #F7F7F7;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  @include media-breakpoint-up(lg) {
+    background-image: url("~src/assets/images/ic_voyage_3.svg");
+    background-position: 65% center;
+  }
+  height: 300px;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.ecosystem-item:nth-child(4n) {
+  background-color: #F4F4F4;
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+  @include media-breakpoint-up(lg) {
+    background-image: url("~src/assets/images/ic_voyage_4.svg");
+    background-position: top right;
+  }
+  height: 340px;
+  padding-bottom: 40px;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}

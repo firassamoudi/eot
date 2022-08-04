@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="246" height="246" viewBox="0 0 246 246">
+  <defs>
+    <filter id="Ellipse_215" x="0" y="0" width="246" height="246" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-color="#ff0e0e" flood-opacity="0.38"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_3263" data-name="Groupe 3263" transform="translate(-39 -474)">
+    <g transform="matrix(1, 0, 0, 1, 39, 474)" filter="url(#Ellipse_215)">
+      <circle id="Ellipse_215-2" data-name="Ellipse 215" cx="63" cy="63" r="63" transform="translate(60 60)" fill="#de1f26"/>
+    </g>
+    <g id="Groupe_3262" data-name="Groupe 3262" transform="translate(-353 59.333)">
+      <line id="Ligne_81" data-name="Ligne 81" y2="66" transform="translate(514 504.667)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8"/>
+      <line id="Ligne_82" data-name="Ligne 82" x1="68.867" transform="translate(480.524 538.292)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8"/>
+    </g>
+  </g>
+</svg>

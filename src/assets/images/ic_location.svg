@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.5" height="30" viewBox="0 0 22.5 30">
+  <g id="location" transform="translate(-48)">
+    <g id="Groupe_3136" data-name="Groupe 3136" transform="translate(48)">
+      <g id="Groupe_3135" data-name="Groupe 3135">
+        <path id="Tracé_4970" data-name="Tracé 4970" d="M59.25,0A11.263,11.263,0,0,0,48,11.25c0,5.808,9.237,17.039,10.291,18.3a1.25,1.25,0,0,0,1.919,0C61.263,28.289,70.5,17.058,70.5,11.25A11.263,11.263,0,0,0,59.25,0Zm0,26.768C56.139,22.85,50.5,14.978,50.5,11.25a8.75,8.75,0,1,1,17.5,0C68,14.978,62.361,22.85,59.25,26.768Z" transform="translate(-48)" fill="#e62825"/>
+      </g>
+    </g>
+    <g id="Groupe_3138" data-name="Groupe 3138" transform="translate(53 5)">
+      <g id="Groupe_3137" data-name="Groupe 3137" transform="translate(0)">
+        <path id="Tracé_4971" data-name="Tracé 4971" d="M118.25,64a6.25,6.25,0,1,0,4.474,10.614,1.25,1.25,0,0,0-1.789-1.746A3.75,3.75,0,1,1,122,70.25a1.25,1.25,0,0,0,2.5,0A6.257,6.257,0,0,0,118.25,64Z" transform="translate(-112 -64)" fill="#1d3557"/>
+      </g>
+    </g>
+  </g>
+</svg>

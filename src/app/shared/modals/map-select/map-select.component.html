@@ -1,0 +1,27 @@
+<h1 mat-dialog-title class="panel-title">Choisir PIN</h1>
+<mat-dialog-content>
+  <div>
+    <label for="location-name" class="form-label">Recherche sur carte</label>
+    <div class="inner-add-on right-add-on">
+      <input type="text"
+             class="form-control event-input"
+             id = "location-name"
+             placeholder="Recherche"
+             #search>
+      <svg-icon class="inner-icon" src="assets/icons/ic-map.svg" [svgStyle]="{'width.px': 22, 'height.px': 22}"></svg-icon>
+    </div>
+  </div>
+  <div class="select-map-container">
+    <agm-map [zoom]="zoom"
+             [latitude]="mapLatitude"
+             [longitude]="mapLongitude"
+             (mapClick)="onMapClicked($event)">
+      <agm-marker [latitude]="latitude"
+                  [longitude]="longitude"
+                  [markerDraggable]="true" (dragEnd)="printOnDragEnd($event)"></agm-marker>
+    </agm-map>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-center py-3">
+  <button (click)="confirmLocation()" class="btn eot-btn px-5">Confirmer</button>
+</mat-dialog-actions>

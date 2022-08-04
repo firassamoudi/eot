@@ -1,0 +1,44 @@
+h2 {
+  font-family: 'Ambit', sans-serif;
+  font-size: 36px;
+  color: #1D3557;
+  font-weight: 500;
+  margin-bottom: 19px;
+}
+
+a,span {
+  text-align: left;
+  color: #A8A8A8;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+span {
+  text-align: center!important;
+  margin-bottom: 20px;
+}
+
+
+.login-btns {
+  justify-content: center;
+  img {
+    width: 106px;
+  }
+}
+
+form {
+
+}
+
+.btn {
+  background: #E62825;
+  border: none;
+  height: 42px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.form-container {
+  padding: 10vh 0;
+}

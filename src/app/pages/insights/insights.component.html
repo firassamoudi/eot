@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="carousel-slide">
+      <div class="row no-gutters">
+        <div class="col-lg-5 home-slide first-slide">
+          <div class="slide-content d-flex flex-column justify-content-center h-100">
+            <div>
+              <h2>Infographies & Rapports</h2>
+              <p>
+                Explorez les infographie et les rapports d'Entrepreneurs of Tunisia sur l'écosystème des startups Tunisien.
+              </p>
+            </div>
+          </div>
+          <img class="dots" src="assets/images/white-dots.svg">
+          <div class="circle"></div>
+        </div>
+        <div class="col-lg-7 first-image-slide">
+          <svg-icon class="dots dots-1" [svgStyle]="{'width.px': 32}" src="assets/images/blue-dots.svg"></svg-icon>
+          <svg-icon class="dots dots-2" [svgStyle]="{'width.px': 32}" src="assets/images/blue-dots.svg"></svg-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <p class="home-seach-text">
+    Rechercher une infographie ou un rapport
+  </p>
+  <div class="search-input mb-100">
+    <svg-icon [svgStyle]="{'width.px': 32}" src="assets/images/search.svg"></svg-icon>
+    <input type="text" placeholder="Recherche" [formControl]="search"/>
+  </div>
+</div>
+<div class="page-main-title left-title">
+  <img src="assets/images/ic_circle_blue.svg"/>
+  <h2>Infographies</h2>
+</div>
+<div class="container-fluid">
+  <div class="container pb-5">
+  <div class="insight-panel infography-panel">
+    <div class="row">
+      <div class="col-lg-4 info-col">
+        <div class="col-content">
+          <h3 class="info-title">
+            Infographie sur le régime de l'auto-entrepreneur
+          </h3>
+          <p class="info-date">
+            Décembre 2020
+          </p>
+        </div>
+        <div class="circle"></div>
+      </div>
+      <div class="col-lg-8 image-col">
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container-fluid">
+  <div class="row justify-content-center py-5">
+    <div class="col-lg-8">
+      <div class="slider">
+        <owl-carousel-o [options]="insightsCustomOptions">
+          <ng-template *ngFor="let insightGroup of infography" carouselSlide>
+            <app-insight-item *ngFor="let insight of insightGroup" [insight]="insight"></app-insight-item>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-main-title right-title">
+  <h2 class="green-title">Rapports</h2>
+  <img src="assets/images/ic_circle_green.svg"/>
+</div>
+<div class="container-fluid">
+  <div class="container pb-5">
+    <div class="insight-panel reports-panel">
+      <div class="row">
+        <div class="col-lg-4 info-col order-lg-1">
+          <div class="col-content">
+            <h3 class="info-title">
+              Africa Investment Report 2020
+            </h3>
+            <p class="info-date">
+              Janvier 2021
+            </p>
+          </div>
+          <div class="circle"></div>
+        </div>
+        <div class="col-lg-8 image-col order-lg-0">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row justify-content-center py-5">
+    <div class="col-lg-8">
+      <div class="slider">
+        <owl-carousel-o [options]="insightsCustomOptions">
+          <ng-template *ngFor="let insightGroup of reports" carouselSlide>
+            <app-insight-item *ngFor="let insight of insightGroup" [insight]="insight"></app-insight-item>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

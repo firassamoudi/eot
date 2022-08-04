@@ -1,0 +1,217 @@
+<div class="map-page py-5">
+  <div class="container">
+    <div class="filter-container">
+      <div class="row">
+        <div class="col-lg-3 d-flex align-items-center py-1">
+          <mat-select [value]="0" class="field-selection">
+            <mat-select-trigger>
+              <div class="section-trigger">
+                <svg-icon src="assets/icons/ic-cpu.svg"></svg-icon>&nbsp;
+                Informatique et communication
+              </div>
+            </mat-select-trigger>
+            <mat-option [value]="0">
+              <svg-icon src="assets/icons/ic-cpu.svg"></svg-icon>&nbsp;
+              <span class="option-content">Informatique et communication</span>
+            </mat-option>
+          </mat-select>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center py-1">
+          <svg-icon [svgStyle]="{'width.px': 24, 'margin-bottom.px': 4, 'margin-right.px': 4}" src="assets/images/search.svg"></svg-icon>
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits"
+                      [selectable]="true"
+                      [removable]="true">
+              {{fruit.name}}
+              <img style="height: 8px;" src="assets/icons/ic-chip-remove.svg" matChipRemove>
+            </mat-chip>
+            <input hidden [matChipInputFor]="chipList"
+                   [matChipInputAddOnBlur]="false"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </div>
+        <div class="col-lg-3 d-flex align-items-center py-1">
+            <svg-icon [svgStyle]="{'height.px': 24, 'margin-bottom.px': 4, 'margin-right.px': 4}" src="assets/icons/ic-pin.svg"></svg-icon>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let region of regions"
+                        [selectable]="true"
+                        [removable]="true">
+                {{region.name}}
+                <img style="height: 8px;" src="assets/icons/ic-chip-remove.svg" matChipRemove>
+              </mat-chip>
+              <input hidden [matChipInputFor]="chipList"
+                     [matChipInputAddOnBlur]="false"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+        </div>
+        <div class="col-lg-2">
+          <button class="btn search-button">Recherche</button>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="add-popup">
+            <p class="title mb-1">Créez une alerte emploi</p>
+            <p class="text mb-1">Créez une alerte emploi maintenant et ne manquez jamais un emploi</p>
+            <input type="text" class="form-control mb-2" placeholder="Mots-clé">
+            <button class="btn create">Créez</button>
+          </div>
+          <div class="py-4">
+            <p class="filter-title">Type d’offre</p>
+            <div class="filter-list">
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [checked]="true" [disableRipple]="true">
+                  <span class="filter-label">
+                    Temps plein
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-active">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Temps partiel
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Stage PFE
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Stage
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Freelance
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="py-4">
+            <p class="filter-title">Salaire</p>
+            <div class="custom-slider">
+              <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+            </div>
+          </div>
+          <div class="py-4">
+            <p class="filter-title">Type de contrat</p>
+            <div class="filter-list">
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [checked]="true" [disableRipple]="true">
+                  <span class="filter-label">
+                    CDI
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-active">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    CDD
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [checked]="true" [disableRipple]="true">
+                  <span class="filter-label">
+                    SIVP
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-active">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Al Karama
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox [disableRipple]="true">
+                  <span class="filter-label">
+                    Indépendant
+                  </span>
+                  </mat-checkbox>
+                </div>
+                <div class="col-auto">
+                  <span class="badge bg-inactive">50</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="py-4">
+            <p class="filter-title">Expérience</p>
+            <div class="custom-slider">
+              <ngx-slider [(value)]="expMinValue" [(highValue)]="expMaxValue" [options]="expOptions"></ngx-slider>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 py-3">
+          <p class="hit-number">
+            40 offres d'emploi trouvées
+          </p>
+          <div class="row">
+            <div class="col-lg-4">
+              <app-job-item></app-job-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

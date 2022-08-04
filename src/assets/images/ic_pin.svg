@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74.838" height="130.667" viewBox="0 0 74.838 130.667">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2e99ce"/>
+      <stop offset="0.379" stop-color="#2e99ce" stop-opacity="0.812"/>
+      <stop offset="1" stop-color="#2e99ce" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="Groupe_3339" data-name="Groupe 3339" transform="translate(-555.12 -624.333)">
+    <g id="Groupe_2679" data-name="Groupe 2679" transform="translate(-511 201)">
+      <circle id="Ellipse_158" data-name="Ellipse 158" cx="20.5" cy="20.5" r="20.5" transform="translate(1083 513)" fill="url(#radial-gradient)"/>
+      <g id="Ellipse_159" data-name="Ellipse 159" transform="translate(1092 522)" fill="#2e99ce" stroke="#fff" stroke-width="2">
+        <circle cx="11.5" cy="11.5" r="11.5" stroke="none"/>
+        <circle cx="11.5" cy="11.5" r="10.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Groupe_2677" data-name="Groupe 2677" transform="translate(-583 242)">
+      <g id="Groupe_2594" data-name="Groupe 2594" transform="translate(1138.12 382.333)">
+        <path id="Tracé_1096" data-name="Tracé 1096" d="M217.865,67.923c-.386,0-.774,0-1.161,0-28.55.042-46.4,30.893-32.129,55.617l31.779,55.042c.205,0,.41.007.617.007s.414-.005.619-.007l31.781-55.046c14.136-24.486-3.234-55.366-31.507-55.61m-.893,56.63a18.845,18.845,0,1,1,18.351-18.839,18.6,18.6,0,0,1-18.351,18.839" transform="translate(-179.553 -67.919)" fill="#2e99ce"/>
+        <ellipse id="Ellipse_156" data-name="Ellipse 156" cx="23.5" cy="26.5" rx="23.5" ry="26.5" transform="translate(14.88 11.667)" fill="#2e99ce"/>
+      </g>
+    </g>
+  </g>
+</svg>

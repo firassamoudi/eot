@@ -1,0 +1,148 @@
+<div class="container text-center">
+  <div class="slider">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <div class="container carousel-slide">
+          <div class="row no-gutters">
+            <div class="col-lg-5 home-slide first-slide">
+              <div class="slide-content d-flex flex-column justify-content-center h-100">
+                <div>
+                  <h2>Infographies & Rapports</h2>
+                  <p>
+                    Explorez les infographie et les rapports d'Entrepreneurs of Tunisia sur l'écosystème des startups Tunisien.
+                  </p>
+                  <a class="carousel-link" routerLink="/insights">
+                    <svg-icon [svgStyle]="{'width.px': 40}" src="assets/icons/ic-go.svg"></svg-icon>
+                    Go To Insights
+                  </a>
+                </div>
+              </div>
+              <img alt="dots" class="dots" src="assets/images/white-dots.svg">
+              <div class="circle"></div>
+            </div>
+            <div class="col-lg-7 first-image-slide">
+              <svg-icon class="dots dots-1" [svgStyle]="{'width.px': 32}" src="assets/images/blue-dots.svg"></svg-icon>
+              <svg-icon class="dots dots-2" [svgStyle]="{'width.px': 32}" src="assets/images/blue-dots.svg"></svg-icon>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="container carousel-slide">
+          <div class="row no-gutters">
+            <div class="col-lg-7 second-image-slide order-1 order-lg-0">
+              <svg-icon [svgStyle]="{'width.px': 32}" class="dots dots-1" src="assets/images/blue-dots.svg"></svg-icon>
+              <svg-icon [svgStyle]="{'width.px': 32}" class="dots dots-2" src="assets/images/blue-dots.svg"></svg-icon>
+            </div>
+            <div class="col-lg-5 home-slide second-slide order-0 order-lg-1">
+              <div class="slide-content d-flex flex-column justify-content-center h-100">
+                <div>
+                  <h2>Découvrir</h2>
+                  <p>
+                    La cartographie de l'écosystème des startups Tunisien. Startups, incubateurs, accélérateurs, investisseurs, coworking spaces et plus encore dans notre mapping interactif.
+                  </p>
+                  <a class="carousel-link" routerLink="/map">
+                    <svg-icon [svgStyle]="{'width.px': 40}" src="assets/icons/ic-go.svg"></svg-icon>
+                    Go To Map
+                  </a>
+                </div>
+              </div>
+              <img alt="dots" class="dots" src="assets/images/white-dots.svg">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+  <div class="row justify-content-center pt-5">
+    <div class="col-lg-10">
+      <p class="home-seach-text">
+        Recherchez une startup ou un acteur de soutien de l'écosystème des startups Tunisien
+      </p>
+      <form (ngSubmit)="search()">
+        <div class="search-input mb-100">
+          <svg-icon [svgStyle]="{'width.px': 32}" src="assets/images/search.svg"></svg-icon>
+          <input [(ngModel)]="keyword" [ngModelOptions]="{standalone: true}" type="text" placeholder="Recherche">
+        </div>
+      </form>
+    </div>
+  </div>
+  <h3 class="obs-title">L'observatoire de l'écosystème des startups Tunisiens</h3>
+  <div class="row text-center justify-content-center mb-100">
+    <div *ngFor="let stat of stats" class="col-lg-2 stat-item text-center text-lg-start mb-3">
+      <p class="stat-value">{{ stat?.value }}</p>
+      <p class="stat-title">{{ stat?.name }}</p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid p-0">
+  <div class="w-100 mb-130 d-flex justify-content-center">
+    <div class="slider w-75">
+      <owl-carousel-o [options]="insightsCustomOptions">
+        <ng-template *ngFor="let insight of insights" carouselSlide>
+          <app-insight-item [insight]="insight"></app-insight-item>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <img alt="" class="floating-circle float-r" src="assets/images/ic_cicle_blue_up.svg">
+  </div>
+</div>
+
+<div class="main-title-content">
+  <div class="pin-container flex-wrap">
+  </div>
+  <div class="content-container py-5">
+    <h2 class="main-title">
+      Rejoignez Entrepreneurs of Tunisia
+    </h2>
+    <p class="main-paragraph">
+      Ajoutez votre startup ou votre structure de soutien et faites partie du mapping le plus complet de l'écosystème des startups Tunisien.
+    </p>
+    <div class="button-container">
+      <ul class="link-list">
+        <li class="link-item">
+          <a class="link" routerLink="/add/startup">
+            Ajouter votre startup
+            <svg-icon [svgStyle]="{'width.px': 24}" src="assets/images/ic-add-circle-white.svg"></svg-icon>
+          </a>
+        </li>
+        <li class="link-item">
+          <a class="link" routerLink="/add/structure">
+            Ajouter votre structure de soutien
+            <svg-icon [svgStyle]="{'width.px': 24}" src="assets/images/ic-add-circle-white.svg"></svg-icon>
+          </a>
+        </li>
+        <li class="link-item">
+          <a class="link" routerLink="/add/structure">
+            Ajouter votre offre d’emploi
+            <svg-icon [svgStyle]="{'width.px': 24}" src="assets/images/ic-add-circle-white.svg"></svg-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-container">
+    <img alt="main image" class="main-image" src="assets/images/main_title_img@2x.png">
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="about mb-80 col-md-6 offset-md-6">
+    <div class="header text-center">
+      <h1 class="m-0"><svg-icon src="assets/images/about.svg"></svg-icon> À propos</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-11 offset-md-1">
+          <p>Entrepreneurs of Tunisia est l'observatoire de l'écosystème des startups Tunisien.</p>
+          <p>Initiative de la Fondation BIAT pour la jeunesse, en partenariat avec MAZAM et soutenue par Biatlabs, Entrepreneurs of Tunisia vous permet d'explorer l'écosystème des startups Tunisien. Vous pouvez découvrir les startups, les structures de soutien, les investisseurs et encore plus d'acteurs sur notre cartographie dynamique ou à travers les infographies et les rapports que nous publions régulièrement.</p>
+        </div>
+      </div>
+      <div class="row">
+        <a class="col-md-3 offset-md-1 btn submit-button align-self-center" routerLink="/about">Consulter la page</a>
+      </div>
+    </div>
+  </div>
+</div>

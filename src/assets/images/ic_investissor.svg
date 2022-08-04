@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.304" height="16" viewBox="0 0 19.304 16">
+  <g id="investment" transform="translate(0 -43.819)">
+    <g id="Groupe_2589" data-name="Groupe 2589" transform="translate(7.104 46.793)">
+      <g id="Groupe_2588" data-name="Groupe 2588" transform="translate(0 0)">
+        <path id="Tracé_1074" data-name="Tracé 1074" d="M191.462,127.15h-.991a.921.921,0,0,1,0-1.843h1.983a.566.566,0,1,0,0-1.131h-.921v-.921a.566.566,0,1,0-1.131,0v.923a2.052,2.052,0,0,0,.07,4.1h.991a.921.921,0,1,1,0,1.843h-1.983a.566.566,0,0,0,0,1.131h.921v.921a.566.566,0,0,0,1.131,0v-.923a2.052,2.052,0,0,0-.07-4.1Z" transform="translate(-188.418 -122.689)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Groupe_2591" data-name="Groupe 2591" transform="translate(0 51.253)">
+      <g id="Groupe_2590" data-name="Groupe 2590" transform="translate(0 0)">
+        <path id="Tracé_1075" data-name="Tracé 1075" d="M16.694,244.019a.566.566,0,0,0-.745.292,6.869,6.869,0,0,1-13.073-1.627l1.5,1A.566.566,0,1,0,5,242.746l-2.473-1.652a.566.566,0,0,0-.784.156L.1,243.722a.566.566,0,1,0,.941.628l.78-1.168a8,8,0,0,0,15.17,1.581A.566.566,0,0,0,16.694,244.019Z" transform="translate(0 -240.998)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Groupe_2593" data-name="Groupe 2593" transform="translate(2.271 43.819)">
+      <g id="Groupe_2592" data-name="Groupe 2592" transform="translate(0 0)">
+        <path id="Tracé_1076" data-name="Tracé 1076" d="M77.019,48.876a.566.566,0,0,0-.784.156l-.78,1.168a8,8,0,0,0-15.17-1.581.566.566,0,0,0,1.037.453A6.869,6.869,0,0,1,74.394,50.7l-1.5-1a.566.566,0,1,0-.628.941l2.473,1.652a.565.565,0,0,0,.784-.156l1.652-2.472A.566.566,0,0,0,77.019,48.876Z" transform="translate(-60.237 -43.819)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

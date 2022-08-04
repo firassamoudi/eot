@@ -1,0 +1,42 @@
+@import "../../../vars";
+
+section {
+  background: rgba(241,241,241,0.2);
+  min-height: 70vh;
+}
+
+h1 {
+  font-size: 47px;
+  font-weight: 700;
+  color: $blue1;
+  padding-top: 28px;
+  padding-bottom: 48px;
+}
+
+p {
+  color: $blue1;
+  font-weight: 200;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 40px;
+}
+
+.submit-button {
+  width: 160px;
+}
+
+.d-flex {
+  img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    fill: $blue1;
+    color: $blue1;
+  }
+}

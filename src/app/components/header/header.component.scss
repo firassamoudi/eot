@@ -1,0 +1,82 @@
+@import "../../../vars";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+
+.logo {
+  width: 50px;
+}
+
+.nav-item {
+  padding: 0 14px;
+
+  img {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all .3s ease-in-out;
+  }
+
+  a {
+    color: $gray2;
+    font-weight: 400;
+    font-size: 14px;
+    transition: color .3s ease-in-out;
+  }
+
+  .title-underline {
+    min-height: 2px;
+    background-color: $blue1;
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+  }
+
+}
+
+.nav-item.active {
+
+  img {
+    opacity: 1;
+    transform: translateY(20%);
+  }
+
+  a {
+    color: $blue1;
+    font-weight: 500;
+  }
+
+  .title-underline {
+    transform: scaleX(1);
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+  .logo {
+    width: 85px;
+    padding-top: 30px;
+  }
+
+  .navbar{
+    padding: 0 90px 30px;
+    background-color: white!important;
+  }
+
+  .navbar-collapse  {
+    flex-grow: 0 !important;
+  }
+
+  .nav-item:hover{
+    cursor: pointer;
+  }
+
+  .submit-button{
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .mr-80 {
+    margin-right: 4vw;
+  }
+
+}

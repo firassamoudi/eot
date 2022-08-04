@@ -1,0 +1,50 @@
+<div class="mindset-content container-fluid">
+  <div class="row mindset-section no-gutters">
+    <div class="col-lg-4 text-col">
+      <button mat-dialog-close class="flat-btn">
+        <svg-icon src="assets/icons/ic-circle-close-white.svg"></svg-icon>
+      </button>
+      <div class="text-col-content">
+        <div class="text-container">
+          <h1 class="mindset-title">{{ voyages[step]?.title }}</h1>
+          <p class="mindset-subtitle">{{ voyages[step]?.sub_title }}</p>
+          <hr>
+          <p class="mindset-description">
+            {{ voyages[step]?.description }}
+          </p>
+        </div>
+        <div class="navigation-container">
+          <hr>
+          <div class="row">
+            <div class="col-lg-6">
+              <button *ngIf="step" (click)="decrementStep()" class="flat-btn nav-btn">
+                <svg-icon [svgStyle]="{'margin-top.px': -4}" src="assets/icons/ic-nav-left.svg"></svg-icon> PRÉCÉDENT
+              </button>
+            </div>
+            <div class="col-lg-6">
+              <button *ngIf="step < (voyages?.length - 1)" (click)="incrementStep()" class="flat-btn nav-btn">
+                SUIVANT <svg-icon [svgStyle]="{'margin-top.px': -4}" src="assets/icons/ic-nav-right.svg"></svg-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="grid-container">
+        <ng-container *ngFor="let element of voyages[step]?.elements">
+          <h2 class="grid-title">{{ element?.header }}</h2>
+          <div class="container-fluid pb-3">
+            <div class="row">
+              <div *ngFor="let item of element?.items" class="col-6 col-lg-24">
+                <a class="logo-link" [href]="item?.link" target="_blank">
+                  <img [src]="baseUrl + item?.logo?.url" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

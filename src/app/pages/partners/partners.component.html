@@ -1,0 +1,22 @@
+<section class="mt-5">
+  <div class="container-fluid text-center">
+    <h1>Nos partenaires</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <p class="mb-5">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div *ngFor="let partner of partners, let i = index" class="col-lg-2">
+        <img [alt]="'partner ' + i + ' logo'" [src]="baseUrl + partner?.image[0]?.url"/>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <a class="col-md-3 offset-md-1 btn submit-button align-self-center" routerLink="/partners">Devenir partenaire</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,209 @@
+<div class="container add-form">
+  <form [formGroup]="startupForm" class="py-3 px-lg-5">
+    <h2 class="form-subtitle">Détails Généraux</h2>
+    <div class="px-lg-5 pb-3">
+      <div class="row">
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Nom de la Startup</label>
+          <input type="text"
+                 placeholder="Le nom de votre startup"
+                 formControlName="name"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Date de création</label>
+          <input type="date"
+                 placeholder="20/01/2020"
+                 formControlName="founding_date"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+        <div formGroupName="address" class="col-lg-4 pb-3">
+          <label class="form-label">Où avez-vous implanté votre startup?</label>
+          <mat-select formControlName="city"
+                      placeholder="Votre région"
+                      class="form-control">
+            <mat-option *ngFor="let region of regions" [value]="region">{{ region }}</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div formGroupName="address" class="row">
+        <div class="col-lg-7 pb-3">
+          <label class="form-label">Adresse</label>
+          <input type="text"
+                 formControlName="street_address"
+                 placeholder="Immeuble Cercle de bureau, 2ème étage B2 Centre Urbain Nord Tunis, Tunisie"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+        <div class="col-lg-5 pb-3">
+          <label class="form-label">Pin de géolocalisation</label>
+          <div class="inner-add-on right-add-on">
+            <input type="text"
+                   (click)="selectMapPin()"
+                   [value]="mapCoordinates"
+                   placeholder="41°24'12.2&quot; N 2°10'26.5&quot; E"
+                   class="form-control"
+                   readonly>
+            <svg-icon class="inner-icon" src="assets/icons/ic-map.svg" [svgStyle]="{'width.px': 22, 'height.px': 22}"></svg-icon>
+          </div>
+        </div>
+      </div>
+      <hr class="form-hr">
+    </div>
+    <h2 class="form-subtitle">Informations de contact</h2>
+    <div class="px-lg-5 pb-3">
+      <div formGroupName="contact" class="row">
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">E-mail</label>
+          <input type="text"
+                 formControlName="email"
+                 placeholder="votrestartup@example.com"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Téléphone</label>
+          <input type="text"
+                 formControlName="phone"
+                 placeholder="+216 99 999 999"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Site web</label>
+          <input type="text"
+                 formControlName="website"
+                 placeholder="www.votresiteweb.com"
+                 class="form-control">
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <label class="form-label">Réseaux sociaux</label>
+        </div>
+      </div>
+      <div formGroupName="social" class="row">
+        <div class="col-lg-3 pb-3">
+          <div class="inner-add-on left-outer-add-on">
+            <input type="text"
+                   formControlName="linkedin"
+                   placeholder="linkedin/startup"
+                   class="form-control">
+            <svg-icon class="inner-icon" src="assets/icons/ic-linkedin.svg" [svgStyle]="{'width.px': 14, 'height.px': 14}"></svg-icon>
+          </div>
+        </div>
+        <div class="col-lg-3 pb-3">
+          <div class="inner-add-on left-outer-add-on">
+            <input type="text"
+                   formControlName="facebook"
+                   placeholder="facebook/startup"
+                   class="form-control">
+            <svg-icon class="inner-icon" src="assets/icons/ic-facebook.svg" [svgStyle]="{'width.px': 14, 'height.px': 14}"></svg-icon>
+          </div>
+        </div>
+        <div class="col-lg-3 pb-3">
+          <div class="inner-add-on left-outer-add-on">
+            <input type="text"
+                   formControlName="twitter"
+                   placeholder="twitter/startup"
+                   class="form-control">
+            <svg-icon class="inner-icon" src="assets/icons/ic-twitter.svg" [svgStyle]="{'width.px': 14, 'height.px': 14}"></svg-icon>
+          </div>
+        </div>
+        <div class="col-lg-3 pb-3">
+          <div class="inner-add-on left-outer-add-on">
+            <input type="text"
+                   formControlName="instagram"
+                   placeholder="instagram/startup"
+                   class="form-control">
+            <svg-icon class="inner-icon" src="assets/icons/ic-instagram.svg" [svgStyle]="{'width.px': 14, 'height.px': 14}"></svg-icon>
+          </div>
+        </div>
+      </div>
+      <hr class="form-hr">
+    </div>
+    <h2 class="form-subtitle">À propos de votre startup</h2>
+    <div class="px-lg-5 pb-3">
+      <div class="row">
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Secteur</label>
+          <mat-select formControlName="sector"
+                      placeholder="Votre Secteur d'activité"
+                      class="form-control">
+            <mat-option *ngFor="let sector of sectors" [value]="sector">{{ sector }}</mat-option>
+          </mat-select>
+        </div>
+        <div class="col-lg-4 pb-3">
+          <label class="form-label">Stade d'avancement</label>
+          <mat-select placeholder="Stade d'avancement"
+                      formControlName="advancement_stage"
+                      class="form-control">
+            <mat-option value="MVP">MVP</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col pb-3">
+          <label class="form-label">Description de la Startup</label>
+          <textarea class="form-control"
+                    formControlName="description"
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="5"
+                    cdkAutosizeMaxRows="8"></textarea>
+          <small class="feedback-invalid">Veuillez remplir ce champ!</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 pb-3">
+          <label class="form-label">Nombre de co-fondateurs</label>
+          <input type="number"
+                 formControlName="cofounders"
+                 placeholder="2"
+                 style="width: 8ch"
+                 class="form-control text-right">
+        </div>
+        <div class="col-lg-3 pb-3">
+          <label class="form-label">Financement levé</label>
+          <div class="inner-add-on right-add-on">
+            <input type="number"
+                   formControlName="funding"
+                   placeholder="10000"
+                   class="form-control text-right">
+            <span class="inner-text currency">DT</span>
+          </div>
+        </div>
+        <div class="col-lg-3 pb-3">
+          <label class="form-label">Nombre d’employés</label>
+          <input type="number"
+                 formControlName="employees"
+                 placeholder="50"
+                 style="width: 8ch"
+                 class="form-control text-right">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 pb-3">
+          <label class="form-label">Logo</label>
+          <label class="pic-label">
+                    <span *ngIf="!image?.content" class="upload-text d-flex align-items center h-100">
+                      <span class="d-block w-100">
+                        <img alt="File upload icon" class="file-icon" src="assets/images/file.svg">
+                        <span class="label-text"><span class="highlight">Upload</span> your logo</span>
+                      </span>
+                    </span>
+            <img *ngIf="image?.content" [src]="image?.content" alt="image preview" class="image-thumbnail">
+            <input (input)="onImageSelection($event)" type="file" accept="image/x-png,image/gif,image/jpeg" hidden>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-2">
+        <button (click)="submit()" class="btn eot-btn w-100">Envoyer</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+<div class="container pb-5">
+  <h1>{{ insight?.title }}</h1>
+  <h2>{{ insight?.subTitle }}</h2>
+
+  <ng-container *ngIf="!insight?.bigImages">
+    <div class="row pt-5">
+      <div class="col-lg-5">
+        <div class="small-cover">
+          <img [src]="baseUrl+insight?.cover?.url"
+               [alt]="insight?.title+' cover'">
+        </div>
+      </div>
+      <div class="col-lg-7 px-5">
+        <p class="small-paragraph">{{ insight?.description }}</p>
+      </div>
+    </div>
+    <div class="small-carousel-container mt-5">
+      <owl-carousel-o [options]="smallOptions">
+        <ng-template *ngFor="let image of insight?.images" carouselSlide>
+          <div class="small-image-container">
+            <img [alt]="insight?.title + ' image'"
+                 [src]="baseUrl + image?.formats?.large?.url">
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="insight?.bigImages">
+    <div class="carousel-container">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let image of insight?.images" carouselSlide>
+          <div class="insight-image-container">
+            <img [alt]="insight?.title + ' image'"
+                 [src]="baseUrl + image?.formats?.large?.url">
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <div class="pt-5">
+      <p class="large-paragraph">{{ insight?.description }}</p>
+    </div>
+  </ng-container>
+  <div class="pt-3">
+      <span class="price-tag">
+        <svg-icon src="assets/icons/ic-price-tag.svg"></svg-icon>{{ insight?.price }} DT
+      </span>
+  </div>
+  <div class="pt-2">
+    <a class="file-download"
+       target="_blank"
+       [href]="baseUrl+insight?.file?.url">
+      <svg-icon [svgStyle]="{'height.px': 20}" src="assets/icons/ic-download.svg"></svg-icon>
+      Télécharger l'infographie</a>
+  </div>
+
+</div>

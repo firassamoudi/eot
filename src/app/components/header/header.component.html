@@ -1,0 +1,54 @@
+<div *ngIf="router.url!== '/map'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" routerLink="/home">
+      <img alt="EOT Logo" class="logo" src="assets/images/logo.svg"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mb-2 mr-80 mb-lg-0">
+        <li class="nav-item text-center" *ngFor="let item of menus" [routerLink]="item.path" routerLinkActive="active">
+          <img [alt]="item.title + ' icon'" class="icon" src="assets/images/{{item.icon}}.svg" />
+          <a class="nav-link" aria-current="page">{{item.title}}</a>
+          <div class="title-underline"></div>
+        </li>
+      </ul>
+      <a *ngIf="!isLoggedIn" class="btn submit-button align-self-center" routerLink="/login/sign-in">
+        Se connecter
+      </a>
+      <button (click)="logout()" *ngIf="isLoggedIn" class="btn submit-button">
+        Se déconnecter
+      </button>
+    </div>
+  </div>
+</nav>
+</div>
+<div *ngIf="router.url=== '/map'">
+<nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" routerLink="/home">
+      <img alt="EOT Logo" class="logo" src="assets/images/logo.svg"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mb-2 mr-80 mb-lg-0">
+        <li class="nav-item text-center" *ngFor="let item of menusmap" [routerLink]="item.path" routerLinkActive="active">
+          <img [alt]="item.title + ' icon'" class="icon" src="assets/images/{{item.icon}}.svg" />
+          <a class="nav-link" aria-current="page">{{item.title}}</a>
+          <div class="title-underline"></div>
+        </li>
+      </ul>
+      <a *ngIf="!isLoggedIn" class="btn submit-button align-self-center" routerLink="/login/sign-in">
+        Se connecter
+      </a>
+      <button (click)="logout()" *ngIf="isLoggedIn" class="btn submit-button">
+        Se déconnecter
+      </button>
+    </div>
+  </div>
+</nav>
+</div>

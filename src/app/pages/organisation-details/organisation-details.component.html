@@ -1,0 +1,106 @@
+<div class="container-fluid map-page pb-5 mb-3">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="px-lg-5">
+        <div class="py-5">
+          <div class="logo-container">
+            <img [src]="baseUrl + organisation?.logo[0]?.url" [alt]="organisation?.name + ' Logo'">
+          </div>
+        </div>
+        <div class="pb-5">
+          <h1 class="organisation-name">{{ organisation?.name }}</h1>
+          <p class="organisation-address">
+            {{ organisation?.address?.street_address }}, {{ organisation?.address?.city }}  {{ organisation?.address?.zip_code }} - {{ organisation?.address?.country }}
+          </p>
+        </div>
+        <div class="contact">
+          <div class="py-1">
+            <svg-icon src="assets/icons/ic-website.svg"></svg-icon> {{ organisation?.contact?.website }}
+          </div>
+          <div class="py-1">
+            <svg-icon src="assets/icons/ic-mail.svg"></svg-icon> {{ organisation?.contact?.email }}
+          </div>
+          <div class="py-1">
+            <svg-icon src="assets/icons/ic-phone.svg"></svg-icon> (+216) {{ organisation?.contact?.phone }}
+          </div>
+        </div>
+        <div class="social">
+          <a *ngIf="organisation?.social?.linkedin" [href]="organisation?.social?.linkedin" target="_blank"><svg-icon src="assets/icons/ic-linkedin.svg"></svg-icon></a>
+          <a *ngIf="organisation?.social?.facebook" [href]="organisation?.social?.facebook" target="_blank"><svg-icon src="assets/icons/ic-facebook.svg"></svg-icon></a>
+          <a *ngIf="organisation?.social?.twitter" [href]="organisation?.social?.twitter" target="_blank"><svg-icon src="assets/icons/ic-twitter.svg"></svg-icon></a>
+          <a *ngIf="organisation?.social?.instagram" [href]="organisation?.social?.instagram" target="_blank"><svg-icon src="assets/icons/ic-instagram.svg"></svg-icon></a>
+        </div>
+        <div class="py-5">
+          <h2 class="description-title">Description</h2>
+          <p class="organisation-description">
+            {{ organisation?.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="map-container">
+        <agm-map [styles]="styles"
+                 (mapReady)="onMapReady($event)"
+                 [latitude]="organisation?.address?.latitude"
+                 [longitude]="organisation?.address?.longitude"
+                 [zoom]="15">
+          <agm-marker [latitude]="organisation?.address?.latitude"
+                      [longitude]="organisation?.address?.longitude"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
+  </div>
+  <div class="px-lg-5">
+    <div class="row">
+      <div *ngIf="organisation?.founding_date" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Date de création</p>
+            <p class="stat-val">{{ moment(organisation?.founding_date).locale('fr').format('ll') }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="organisation?.sector" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Secteur</p>
+            <p class="stat-val">{{ organisation?.sector }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="organisation?.advancement_stage" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Stade d’avancement</p>
+            <p class="stat-val">{{ organisation?.advancement_stage }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="organisation?.cofounders" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Nombre de co-fondateur</p>
+            <p class="stat-val">{{ organisation?.cofounders }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="organisation?.funding" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Financement levé</p>
+            <p class="stat-val">{{ organisation?.funding?.toFixed(0) }} DT</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="organisation?.employees" class="col-lg-2">
+        <div class="stat-box">
+          <div class="stat-content">
+            <p class="stat-name">Nombre d’employés</p>
+            <p class="stat-val">{{ organisation?.employees }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,215 @@
+<div class="container-fluid map-page mb-3">
+  <div class="row">
+    <div class="col-lg-auto order-1 order-lg-0">
+      <div class="map-legend-container">
+        <div class="startup row">
+          <div (click)="setType(EntityType.Startup)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-startup.svg"></svg-icon>
+            Startups
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Startup) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="accelerator row">
+          <div (click)="setType(EntityType.Accelerator)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-accelerator.svg"></svg-icon>
+            Accélérateurs
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Accelerator) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="incubator row">
+          <div (click)="setType(EntityType.Incubator)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-incubator.svg"></svg-icon>
+            Incubateurs
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Incubator) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="investor row">
+          <div (click)="setType(EntityType.Investor)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-investor.svg"></svg-icon>
+            Investisseurs
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Investor) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="coworking row">
+          <div (click)="setType(EntityType.CoworkingSpace)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-coworking.svg"></svg-icon>
+            Coworking Spaces
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.CoworkingSpace) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="structures row">
+          <div (click)="setType(EntityType.Structures)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-structure.svg"></svg-icon>
+            Structures de soutien 
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Structures) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="media row">
+          <div (click)="setType(EntityType.Media)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-media.svg"></svg-icon>
+            Média
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Media) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="services row">
+          <div (click)="setType(EntityType.PublicService)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-public-service.svg"></svg-icon>
+            Services publiques
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.PublicService) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="jobs row">
+          <div (click)="setType(EntityType.Job)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-job.svg"></svg-icon>
+            Jobs
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Job) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="projects row">
+          <div (click)="setType(EntityType.Project)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-project.svg"></svg-icon>
+            Appels à projets
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Project) }}
+          </div>
+        </div>
+        <hr class="separator">
+        <div class="events row">
+          <div (click)="setType(EntityType.Event)" class="col map-legend">
+            <svg-icon src="assets/icons/ic-event.svg"></svg-icon>
+            Événements
+          </div>
+          <div class="col-auto map-number">
+            {{ count(EntityType.Event) }}
+          </div>
+        </div>
+        <hr class="separator">
+      </div>
+    </div>
+    <div class="col-lg order-0 order-lg-1">
+      <div class="map-container">
+        <div class="map-search">
+          <div class="row justify-content-center">
+            <div class="col">
+              <form [formGroup]="filterForm">
+                <div class="search-input">
+                  <svg-icon [svgStyle]="{'width.px': 32}" src="assets/images/search.svg"></svg-icon>
+                  <input formControlName="keyword" type="text" placeholder="Recherche"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="showResults" class="map-results">
+          <div *ngFor="let organisation of filteredOrganisations" class="result-item">
+            <div class="row pb-2">
+              <div class="col-auto d-flex align-items-center">
+                <div class="logo-container">
+                  <img [src]="baseUrl+organisation?.logo[0]?.url" [alt]="organisation?.name + ' Logo'">
+                </div>
+              </div>
+              <div class="col">
+                <p class="result-title">{{ organisation?.name }}</p>
+                <p class="result-type">Startup</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="result-description">
+                  {{ organisation?.description?.slice(0, 102) }}...
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-center">
+                <a class="read-more" [routerLink]="['/organisation', organisation?.id]">Voir plus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <agm-map [styles]="styles"
+                 (mapReady)="onMapReady($event)"
+                 [latitude]="36.482567400686705"
+                 [longitude]="9.11027157163255">
+          <agm-marker-cluster [styles]="iconStyle" [imageSizes]="[111]">
+            <agm-marker *ngFor="let organisation of filteredOrganisations"
+                        [longitude]="organisation?.address?.longitude"
+                        [latitude]="organisation?.address?.latitude"
+                        [iconUrl]="organisation?.icon"
+                        (markerDblClick)="openOrganisationDetailModal(organisation)"></agm-marker>
+          </agm-marker-cluster>
+        </agm-map>
+        <div class="map-filter">
+          <div [formGroup]="filterForm" class="container">
+            <h6>Filtrer par</h6>
+            <div class="py-2">
+              <label>Catégories</label>
+              <mat-select formControlName="type" class="form-control" placeholder="Sélectionner une catégorie">
+                <mat-option [value]="''">Tous</mat-option>
+                <mat-option [value]="EntityType.Startup">Startup</mat-option>
+                <mat-option [value]="EntityType.Accelerator">Accélérateur</mat-option>
+                <mat-option [value]="EntityType.Incubator">Incubateur</mat-option>
+                <mat-option [value]="EntityType.Investor">Investisseurs</mat-option>
+                <mat-option [value]="EntityType.CoworkingSpace">Coworking Space</mat-option>
+                <mat-option [value]="EntityType.Structures">Structure de soutien</mat-option>
+                <mat-option [value]="EntityType.Media">Média</mat-option>
+                <mat-option [value]="EntityType.PublicService">Service publique</mat-option>
+                <mat-option [value]="EntityType.Job">Job</mat-option>
+                <mat-option [value]="EntityType.Project">Appel à projet</mat-option>
+                <mat-option [value]="EntityType.Event">Événement</mat-option>
+              </mat-select>
+            </div>
+            <div class="py-2">
+              <label>Régions</label>
+              <mat-select formControlName="region" class="form-control" placeholder="Sélectionner une région">
+                <mat-option [value]="''">Tous</mat-option>
+                <mat-option *ngFor="let region of regions" [value]="region"><span class="text-capitalize">{{ region }}</span></mat-option>
+              </mat-select>
+            </div>
+            <div class="py-2">
+              <label>Secteurs</label>
+              <mat-select formControlName="sector" class="form-control" placeholder="Sélectionner un secteur">
+                <mat-option [value]="''">Tous</mat-option>
+                <mat-option *ngFor="let sector of sectors" [value]="sector"><span class="text-capitalize">{{ sector }}</span></mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </div>
+        <div class="map-bouton">
+          <a class="link" routerLink="/add/startup">
+            Ajouter votre startup
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

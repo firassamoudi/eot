@@ -1,0 +1,58 @@
+<div class="row justify-content-center form-container">
+  <div class="col-lg-8">
+    <h2>Bienvenue!</h2>
+    <p>Connectez-vous maintenant pour continuer</p>
+    <p *ngIf="success && !err" class="text-success">{{ success }}</p>
+    <p *ngIf="err" class="text-danger">{{ err }}</p>
+    <form [formGroup]="loginForm">
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <img matPrefix class="mat-input-icon" src="assets/images/ic_mail.svg" width="19px" height="19px">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="identifier" type="text" matInput placeholder="E-mail">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <img matPrefix class="mat-input-icon" src="assets/images/ic_password.svg" width="19px" height="19px">
+            <mat-label>Mot de passe</mat-label>
+            <input formControlName="password" type="password" matInput placeholder="Mot de passe">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a [routerLink]="['..', 'forgot-password']" class="reset-password">Mot de passe oublié?</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button [disabled]="loginForm?.invalid"
+                  (click)="login()"
+                  class="btn btn-primary w-100">Connexion</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col pb-3">
+          <span>Ou continuer avec</span>
+        </div>
+      </div>
+      <div class="row login-btns">
+     <!--  <div class="col-auto" (click)="loginFacebook()">
+          <img src="assets/images/login-fb.svg">
+        </div>--> 
+        <div class="col-auto" (click)="loginGoogle()">
+          <img src="assets/images/login-google.svg">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a [routerLink]="['..', 'sign-up']" class="btn btn-secondary">Créer un compte</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

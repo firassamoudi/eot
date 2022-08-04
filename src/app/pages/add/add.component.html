@@ -1,0 +1,41 @@
+<div class="container container-shape">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="add-title">Ajouter votre organisme</h1>
+      <p class="add-text">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+    <div class="col-lg-6 add-visual">
+      <div class="plus-icon d-none d-lg-block">
+
+      </div>
+    </div>
+  </div>
+  <div class="form-rectangle">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         routerLink="startup"
+         routerLinkActive
+         #rla0="routerLinkActive"
+         [active]="rla0.isActive">
+        Startup
+      </a>
+      <a mat-tab-link
+         routerLink="structure"
+         routerLinkActive
+         #rla1="routerLinkActive"
+         [active]="rla1.isActive">
+        Structure de Soutien
+      </a>
+      <a mat-tab-link
+         routerLink="job"
+         routerLinkActive
+         #rla1="routerLinkActive"
+         [active]="rla1.isActive">
+         Offre d’emploi 
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

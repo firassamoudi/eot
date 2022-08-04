@@ -1,0 +1,47 @@
+@import "../../../vars";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0!important;
+  color: white;
+}
+
+span.bold {
+  font-weight: 600;
+}
+
+p.small {
+  font-size: 16px;
+}
+
+.vertical-separator {
+  width: 16px;
+  height: 62px;
+  transform: skew(-20deg);
+  background: #FFFFFF;
+}
+
+@include media-breakpoint-up(lg) {
+  .skew {
+    transform: skew(-20deg);
+
+    img {
+      transform: skew(20deg);
+    }
+
+  }
+}
+
+img {
+  height: 50px;
+}
+
+@include media-breakpoint-down(lg) {
+  .footer > .row > div {
+    padding: 10px 0;
+  }
+}

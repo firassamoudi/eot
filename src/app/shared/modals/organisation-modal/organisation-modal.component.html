@@ -1,0 +1,50 @@
+<mat-dialog-content>
+  <div>
+    <button mat-dialog-close class="flat-btn">
+      <svg-icon [svgStyle]="{'width.px': 24}" src="assets/icons/ic-circle-close.svg"></svg-icon>
+    </button>
+  </div>
+  <div class="container px-lg-4">
+    <div class="row">
+      <div class="col-lg">
+        <h1 class="organisation-name">{{ organisation?.name }}</h1>
+        <p class="organisation-type">Startups</p>
+      </div>
+      <div class="col-lg-auto">
+        <div class="logo-container">
+          <img [src]="baseUrl + organisation?.logo[0]?.url" [alt]="organisation?.name + 'Logo'">
+        </div>
+      </div>
+    </div>
+    <div class="row py-3">
+      <div class="col">
+        <p class="organisation-description">
+          {{ organisation?.description }}
+        </p>
+      </div>
+    </div>
+    <div class="contact">
+      <div>
+        <span class="label">Website</span>: {{ organisation?.contact?.website }}
+      </div>
+      <div>
+        <span class="label">E-mail</span>: {{ organisation?.contact?.email }}
+      </div>
+      <div>
+        <span class="label">Phone</span>: {{ organisation?.contact?.phone }}
+      </div>
+      <div>
+        <span class="label">Address</span>: {{ organisation?.address?.city }} - {{ organisation?.address?.country }}
+      </div>
+      <div class="social">
+        <a [href]="organisation?.social?.linkedin" target="_blank"><svg-icon src="assets/icons/ic-linkedin.svg"></svg-icon></a>
+        <a [href]="organisation?.social?.facebook" target="_blank"><svg-icon src="assets/icons/ic-facebook.svg"></svg-icon></a>
+        <a [href]="organisation?.social?.twitter" target="_blank"><svg-icon src="assets/icons/ic-twitter.svg"></svg-icon></a>
+        <a [href]="organisation?.social?.instagram" target="_blank"><svg-icon src="assets/icons/ic-instagram.svg"></svg-icon></a>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-center">
+  <a mat-dialog-close [routerLink]="['/organisation', organisation?.id]" class="btn btn-see-more">Voir plus <svg-icon src="assets/icons/ic-see-more.svg"></svg-icon></a>
+</mat-dialog-actions>

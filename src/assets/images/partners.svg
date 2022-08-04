@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.498" height="30.5" viewBox="0 0 30.498 30.5">
+  <g id="connection" transform="translate(-0.019)">
+    <g id="Groupe_3234" data-name="Groupe 3234" transform="translate(9.717)">
+      <g id="Groupe_3233" data-name="Groupe 3233">
+        <path id="Tracé_5075" data-name="Tracé 5075" d="M173.1,2.637a5.546,5.546,0,0,0-9.671,5.412.886.886,0,0,0,.05.087l4.153,6.346a.894.894,0,0,0,1.5,0l4.153-6.346a.883.883,0,0,0,.05-.087A5.518,5.518,0,0,0,173.1,2.637ZM171.757,7.2l-3.376,5.159L165,7.2a3.759,3.759,0,1,1,6.753,0Z" transform="translate(-162.83 0)" fill="#e62825"/>
+      </g>
+    </g>
+    <g id="Groupe_3236" data-name="Groupe 3236" transform="translate(12.361 2.595)">
+      <g id="Groupe_3235" data-name="Groupe 3235">
+        <path id="Tracé_5076" data-name="Tracé 5076" d="M210.115,43.566a2.909,2.909,0,1,0,2.907,2.909A2.911,2.911,0,0,0,210.115,43.566Zm0,4.031a1.122,1.122,0,1,1,1.119-1.122A1.122,1.122,0,0,1,210.115,47.6Z" transform="translate(-207.208 -43.566)" fill="#e62825"/>
+      </g>
+    </g>
+    <g id="Groupe_3238" data-name="Groupe 3238" transform="translate(11.56 16.461)">
+      <g id="Groupe_3237" data-name="Groupe 3237">
+        <path id="Tracé_5077" data-name="Tracé 5077" d="M198.362,283.054v-5.833a.894.894,0,0,0-1.787,0v5.833a3.708,3.708,0,1,0,1.787,0Zm-.894,5.525a1.924,1.924,0,1,1,1.92-1.924A1.924,1.924,0,0,1,197.469,288.579Z" transform="translate(-193.761 -276.327)" fill="#1d3557"/>
+      </g>
+    </g>
+    <g id="Groupe_3240" data-name="Groupe 3240" transform="translate(0.019 14.682)">
+      <g id="Groupe_3239" data-name="Groupe 3239">
+        <path id="Tracé_5078" data-name="Tracé 5078" d="M12.826,246.945a.893.893,0,0,0-1.209-.367L6.48,249.324a3.716,3.716,0,1,0,.84,1.577l5.139-2.747A.893.893,0,0,0,12.826,246.945Zm-8.2,6.562a1.919,1.919,0,0,1-2.6-.791,1.921,1.921,0,1,1,2.6.791Z" transform="translate(-0.019 -246.472)" fill="#1d3557"/>
+      </g>
+    </g>
+    <g id="Groupe_3242" data-name="Groupe 3242" transform="translate(17.603 14.682)">
+      <g id="Groupe_3241" data-name="Groupe 3241">
+        <path id="Tracé_5079" data-name="Tracé 5079" d="M306.158,248.536a3.709,3.709,0,0,0-4.5.788l-5.137-2.746a.894.894,0,1,0-.842,1.576l5.139,2.747a3.708,3.708,0,1,0,5.341-2.365Zm-.053,4.18a1.919,1.919,0,0,1-2.6.791,1.925,1.925,0,0,1,.346-3.538,1.9,1.9,0,0,1,1.462.143A1.928,1.928,0,0,1,306.105,252.716Z" transform="translate(-295.205 -246.472)" fill="#1d3557"/>
+      </g>
+    </g>
+  </g>
+</svg>

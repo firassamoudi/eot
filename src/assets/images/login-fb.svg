@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="44" viewBox="0 0 70 44">
+  <g id="Groupe_3337" data-name="Groupe 3337" transform="translate(-1286 -773)">
+    <g id="Groupe_3336" data-name="Groupe 3336" transform="translate(1308.278 783.207)">
+      <g id="Groupe_2979" data-name="Groupe 2979" transform="translate(0 0)">
+        <path id="Tracé_4486" data-name="Tracé 4486" d="M143.413,486.482a12.092,12.092,0,1,1,12.093-12.092A12.106,12.106,0,0,1,143.413,486.482Z" transform="translate(-131.32 -462.297)" fill="#3c5a99"/>
+      </g>
+      <g id="Groupe_2980" data-name="Groupe 2980" transform="translate(8.713 4.845)">
+        <path id="Tracé_4487" data-name="Tracé 4487" d="M152.468,480.536v7.008a.183.183,0,0,0,.183.182h2.6a.183.183,0,0,0,.183-.182v-7.123h1.887a.182.182,0,0,0,.182-.167l.182-2.146a.183.183,0,0,0-.182-.2h-2.068v-1.522a.646.646,0,0,1,.646-.646h1.455a.182.182,0,0,0,.183-.182v-2.146a.183.183,0,0,0-.183-.183h-2.457a2.611,2.611,0,0,0-2.611,2.611v2.069h-1.3a.183.183,0,0,0-.183.183v2.146a.182.182,0,0,0,.183.183h1.3Z" transform="translate(-150.984 -473.231)" fill="#fff" fill-rule="evenodd"/>
+      </g>
+    </g>
+    <g id="Rectangle_518" data-name="Rectangle 518" transform="translate(1286 773)" fill="none" stroke="#ccc" stroke-width="1" opacity="0.33">
+      <rect width="70" height="44" rx="17" stroke="none"/>
+      <rect x="0.5" y="0.5" width="69" height="43" rx="16.5" fill="none"/>
+    </g>
+  </g>
+</svg>

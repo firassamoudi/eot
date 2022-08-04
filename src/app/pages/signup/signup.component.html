@@ -1,0 +1,73 @@
+<div class="row justify-content-center form-container">
+  <div class="col-lg-8">
+    <h2>Créez votre compte</h2>
+    <p *ngIf="err" class="text-danger">{{ err }}</p>
+    <form [formGroup]="signupForm">
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <mat-label>Nom et Prénom</mat-label>
+            <input formControlName="full_name" type="text" matInput placeholder="Nom et Prénom">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <mat-label>Pseudonyme</mat-label>
+            <input formControlName="username" type="text" matInput placeholder="Pseudonyme">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <mat-label>Nom de l'organisme</mat-label>
+            <input formControlName="organisation" type="text" matInput placeholder="Nom de l'organisme">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" type="text" matInput placeholder="E-mail">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="w-100" appearance="fill" floatLabel="always">
+            <mat-label>Mot de passe</mat-label>
+            <input formControlName="password" type="password" matInput placeholder="Mot de passe">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button [disabled]="signupForm?.invalid"
+                  (click)="create()"
+                  class="btn btn-primary w-100">Créer un compte</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col pb-3">
+          <span>Ou continuer avec</span>
+        </div>
+      </div>
+     <!-- <div class="row login-btns" (click)="loginFacebook()">
+        <div class="col-auto">
+          <img alt="Facebook login icon" src="assets/images/login-fb.svg">
+        </div>
+        <div class="col-auto" (click)="loginGoogle()">
+          <img alt="Google login icon" src="assets/images/login-google.svg">
+        </div>
+      </div>-->
+      <div class="row login-btns" >
+        <div class="col-auto" (click)="loginGoogle()">
+          <img alt="Google login icon" src="assets/images/login-google.svg">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

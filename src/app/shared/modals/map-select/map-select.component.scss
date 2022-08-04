@@ -1,0 +1,18 @@
+.panel-title {
+  font-family: 'Ambit', sans-serif;
+  color: #1A3665;
+}
+
+
+.select-map-container {
+  height: 400px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+
+  agm-map {
+    height: 100%;
+  }
+
+}

@@ -1,0 +1,249 @@
+@import "src/vars";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color;
+  }
+}
+
+.map-container {
+  min-height: 70vh;
+  height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+
+  agm-map {
+    height: 70vh;
+    @include media-breakpoint-up(lg) {
+      height: 100%;
+    }
+  }
+
+  .map-filter {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      z-index: 999;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+    }
+    background-color: #FFFFFF;
+    padding: 30px 0;
+    border-radius: 20px;
+
+    h6 {
+      font-size: 18px;
+      font-family: 'Ambit', sans-serif;
+      font-weight: 500;
+      color: $blue1;
+      text-align: center;
+    }
+
+    label {
+      font-size: 14px;
+      font-family: 'Ambit', sans-serif;
+      font-weight: 300;
+      color: #AAAAAA;
+    }
+
+    .form-control {
+      border-color: #EBEBEB;
+      @include placeholder-color(#EBEBEB);
+    }
+
+  }
+  .map-bouton {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      z-index: 999;
+      bottom: 20px;
+      left: 20px;
+      width: 300px;
+    }
+    background-color: #ffffff00;
+    padding: 30px 0;
+    border-radius: 20px;
+
+    .link {
+      background-color: #d60909;
+      font-size: 14px;
+      font-family: 'Ambit', sans-serif;
+      font-weight: 300;
+      color: white;
+    }
+
+  }
+
+  .map-search {
+    padding: 15px 0;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      z-index: 999;
+      top: 20px;
+      width: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 15px;
+    }
+  }
+
+  .map-results {
+    padding: 15px;
+    background-color: #F6F6F6;
+    border-radius: 18px;
+    margin-bottom: 15px;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      z-index: 1000;
+      top: 20px;
+      left: 20px;
+      width: 25%;
+      height: calc(100% - 40px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .result-item {
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      padding: 6px;
+      margin-bottom: 10px;
+
+      .logo-container {
+        img {
+          height: 20px;
+        }
+      }
+
+      .result-title {
+        font-family: 'Ambit', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: #202020;
+        margin: 0;
+      }
+
+      .result-type {
+        font-family: 'Ambit', sans-serif;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      .result-description {
+        font-family: 'Ambit', sans-serif;
+        font-size: 12px;
+        font-weight: 200;
+        color: #7B7D80;
+      }
+
+      a.read-more {
+        font-family: 'Ambit', sans-serif;
+        font-size: 12px;
+        color: #457B9D;
+        text-decoration: none;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+}
+
+.map-legend-container {
+  min-width: 300px;
+  padding: 40px 5px;
+}
+
+hr.separator {
+  border: dashed 1px #707070;
+  background: none;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.map-legend {
+  font-family: 'Ambit', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+
+  svg-icon {
+    margin-right: 10px;
+  }
+
+}
+
+.map-legend:hover {
+  cursor: pointer;
+}
+
+.map-number {
+  font-family: 'Ambit', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: right;
+}
+
+.startup {
+  color: $startup;
+}
+
+.accelerator {
+  color: $accelerator;
+}
+
+.incubator {
+  color: $incubator;
+}
+
+.investor {
+  color: $investor;
+}
+
+.coworking {
+  color: $coworking;
+}
+
+.structures {
+  color: $structures;
+}
+
+.media {
+  color: $media;
+}
+
+.services {
+  color: $services;
+}
+
+.jobs {
+  color: $jobs;
+}
+
+.projects {
+  color: $projects;
+}
+
+.events {
+  color: $events;
+}
+
+.test {
+  color: #FFFFFF;
+}

@@ -1,0 +1,56 @@
+@import "src/vars";
+
+.organisation-name {
+  font-family: 'Ambit', sans-serif;
+  font-size: 30px;
+  color: $blue1;
+  margin: 0;
+}
+
+.organisation-type {
+  font-family: 'Ambit', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.logo-container {
+  img {
+    height: 45px;
+  }
+}
+
+p.organisation-description {
+  font-family: 'Ambit', sans-serif;
+  font-weight: 100;
+  color: #7B7D80;
+}
+
+.contact {
+  border-left: solid 1px #349A9A;
+  font-family: 'Ambit', sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  color: #1F3E63;
+  padding-left: 10px;
+
+  span.label {
+    font-weight: 400;
+  }
+
+  .social {
+    margin-top: 20px;
+
+    a {
+      margin-right: 15px;
+    }
+
+  }
+
+}
+
+.btn-see-more {
+  font-family: 'Ambit', sans-serif;
+  font-weight: 500;
+  color: #457B9D;
+}
